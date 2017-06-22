@@ -139,7 +139,7 @@
             </div>
         
         </div>
-        <button id="button">Click to Read the Explanation</button>
+        <button onclick="hide()">Click to Read the Explanation</button>
         <div id="hide">
         
         <!-- Another horizontal group. Not necessary, but could help in order to separate the columns. -->
@@ -532,6 +532,7 @@
                 
 			}
             
+            
 	
 			
 			$.plot("#graphic1",[{label: "Vertical Movement (m/m) x &#969; (rad/s)",     data: Results_array1 }],{series:{lines:{show:true}},yaxis:{ticks:10,tickDecimals:3},grid:{backgroundColor:{colors:["#fff","#eee"]},borderWidth:{top: 1,right: 1,bottom: 2,left: 2}}});
@@ -547,23 +548,24 @@
             $.plot("#graphic11",[{label: "Roll (degrees) x &#969; (rad/s)",        data: Results_array6 }],{series:{lines:{show:true}},yaxis:{ticks:10,min:0.5,tickDecimals:2},xaxis:{ticks:5,max:2},grid:{backgroundColor:{colors:["#fff","#eee"]},borderWidth:{top: 1,right: 1,bottom: 2,left: 2}}});
             $.plot("#graphic12",[{label: "Roll (degrees) x T; (s)",        data: Results_array7 }],{series:{lines:{show:true}},yaxis:{ticks:10,min:0.5,tickDecimals:2},xaxis:{ticks:15,max:30},grid:{backgroundColor:{colors:["#fff","#eee"]},borderWidth:{top: 1,right: 1,bottom: 2,left: 2}}});
             
-            var button = document.getElementById('button');
-
-            button.onclick = function() {
-                var div = document.getElementById('hide');
-                if (div.style.display == 'none') {
-                    div.style.display="";
-                }
-                else {
-                    div.style.display = 'none';
-                }
-            }
+            
            
            
         
         
             
         }
+
+        function hide() {
+            var div = document.getElementById('hide');
+            if (div.style.display == 'none') {
+                div.style.display="";
+            }
+            else {
+                div.style.display = 'none';
+            }
+        }
+        document.onload = hide()
 		
 	</script>
 
