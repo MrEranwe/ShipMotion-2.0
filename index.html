@@ -62,15 +62,13 @@
              <div class="col-md-12 text-center">
                 <h1>Ship Motion Application</h1>
                 <div align="right">
-                <p style="width:80%" align="right"> <small>by Sthefano L. Andrade and Henrique M. Gaspar<br>(sthefano.lande@gmail.com; hega @ hials.no), v0.1, Oct 2015.
-                <br> A <a href="http://shiplab.hials.org">Ship Design and Operations Lab</a> App.</small></p>
-                </div>
+                        <p style="width:80%" align="right"> <small>by Sthefano L. Andrade and Henrique M. Gaspar<br>(sthefano.lande@gmail.com; hega @ hials.no), v0.1, Oct 2015.
+
+                         <br> A <a href="http://shiplab.hials.org">Ship Design and Operations Lab</a> App.</small></p>
+                    </div>
                  
-                <p align="left" > Graphical representation of estimated motion responses for ships. Heave, pitch, roll, vertical motion and vertical acceleration responses are calculated as function of length, breadth, draft, block coefficient, waterline breadth and operational profile. Bending moment is also estimated. Values can be changed by clicking and dragging the sliders. </p>
-                <p align="left">Based on the article <strong><a href="http://www.sciencedirect.com/science/article/pii/S0029801803001082">Estimation of ship motions using closed-form expressions by Jensen and Mansour (2004)</a></strong>.</p>
-            </div>                   
-             
-                       
+                <p align="left" > Graphical representation of estimated motion responses for ships. Heave, pitch, roll, vertical motion and vertical acceleration responses are calculated as function of length, breadth, draft, block coefficient, waterline breadth and operational profile. Bending moment is also estimated. Values can be changed by clicking and dragging the sliders. Based on the article <strong><a href="http://www.sciencedirect.com/science/article/pii/S0029801803001082">Estimation of ship motions using closed-form expressions by Jensen and Mansour (2004)</a></strong>.</p>
+            </div>  
             
             <!-- 2 divisions in page. 2 column. -->
             <div class="col-md-6 text-left">
@@ -142,9 +140,9 @@
         
         </div>
         <button id="button">Click to Read the Explanation</button>
-        <div id="hide" style="display:none">
-        <!-- Another horizontal group. Not necessary, but could help in order to separate the columns. -->
+        <div id="hide">
         
+        <!-- Another horizontal group. Not necessary, but could help in order to separate the columns. -->
         <div class="row">
             
             <div class="col-md-12 text-left">
@@ -168,6 +166,7 @@
                 <p><em>Model of the simplified ship used in roll motion analysis (Jensen and Mansour, 2004)</em></p>
             </div>      
         </div>
+        
         <div class="row">
             <div class="col-md-12">
             <h2 align="left"> Commentary: </h2>
@@ -283,9 +282,8 @@
                 <li>Relative Position: Does not affect the formulation for wave induced bending moment. The maximum moment occurs at midship in ships;</li>
                 <li>Heading: The effect of changes in heading varies a lot.</li>
             </div>
-        </div> 
+        </div>  
     </div>
-         
         
 
     </div>
@@ -534,19 +532,6 @@
                 
 			}
             
-            //Toggle explanation
-            
-            var button = document.getElementById('button');
-
-            button.onclick = function() {
-                var div = document.getElementById('hide');
-                if (div.style.display == 'none') {
-                    div.style.display="";
-                }
-                else {
-                    div.style.display = 'none';
-                }
-            };
 	
 			
 			$.plot("#graphic1",[{label: "Vertical Movement (m/m) x &#969; (rad/s)",     data: Results_array1 }],{series:{lines:{show:true}},yaxis:{ticks:10,tickDecimals:3},grid:{backgroundColor:{colors:["#fff","#eee"]},borderWidth:{top: 1,right: 1,bottom: 2,left: 2}}});
@@ -561,6 +546,18 @@
             $.plot("#graphic10",[{label: "Bending Moment (N.m x 10e6) x &#969; (rad/s)",        data: Results_array5 }],{series:{lines:{show:true}},yaxis:{ticks:10,tickDecimals:3},grid:{backgroundColor:{colors:["#fff","#eee"]},borderWidth:{top: 1,right: 1,bottom: 2,left: 2}}});
             $.plot("#graphic11",[{label: "Roll (degrees) x &#969; (rad/s)",        data: Results_array6 }],{series:{lines:{show:true}},yaxis:{ticks:10,min:0.5,tickDecimals:2},xaxis:{ticks:5,max:2},grid:{backgroundColor:{colors:["#fff","#eee"]},borderWidth:{top: 1,right: 1,bottom: 2,left: 2}}});
             $.plot("#graphic12",[{label: "Roll (degrees) x T; (s)",        data: Results_array7 }],{series:{lines:{show:true}},yaxis:{ticks:10,min:0.5,tickDecimals:2},xaxis:{ticks:15,max:30},grid:{backgroundColor:{colors:["#fff","#eee"]},borderWidth:{top: 1,right: 1,bottom: 2,left: 2}}});
+            
+            var button = document.getElementById('button');
+
+            button.onclick = function() {
+                var div = document.getElementById('hide');
+                if (div.style.display == 'none') {
+                    div.style.display="";
+                }
+                else {
+                    div.style.display = 'none';
+                }
+            }
            
            
         
